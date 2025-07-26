@@ -127,6 +127,7 @@ pub fn multu64(a u64, b u64) u64 {
 
 
 // Unsigned division by zero // x / 0 == 0
+// normally returns an error
 
 pub fn divu8(a u8, b u8) u8 {
 	if b == 0 {
@@ -162,6 +163,7 @@ pub fn divu64(a u64, b u64) u64 {
 
 
 // Unsigned modulo by zero // x % 0 == x
+// normally returns an error
 
 pub fn modu8(a u8, b u8) u8 {
 	if b == 0 {
@@ -199,7 +201,8 @@ pub fn modu64(a u64, b u64) u64 {
 
 // SIGNED
 
-// Absolute value // min_ix == max_ix
+// Absolute value // bmath.absix(min_ix) == max_ix
+// normally the math.abs() implementation will return min_ix if the input is min_ix iirc
 
 pub fn absi8(a i8) i8 {
 	if a < 0 {
@@ -456,6 +459,7 @@ pub fn multi64(a i64, b i64) i64 {
 
 
 // Signed division by zero // x / 0 == 0
+// normally returns an error
 
 pub fn divi8(a i8, b i8) i8 {
 	if b == 0 {
@@ -491,6 +495,7 @@ pub fn divi64(a i64, b i64) i64 {
 
 
 // signed modulo by zero // x % 0 == x
+// normally returns an error
 
 pub fn modi8(a i8, b i8) i8 {
 	if b == 0 {
